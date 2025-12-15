@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: andrea-lucchesi-website
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: FLASK_SECRET_KEY
+        generateValue: true
+      - key: MAIL_HOST
+        value: smtp.gmail.com
+      - key: MAIL_PORT
+        value: 587
+      # Le seguenti variabili devono essere configurate manualmente nel dashboard Render:
+      # - MAIL_USER (la tua email Gmail)
+      # - MAIL_PASS (app password di Gmail, NON la password normale)
+      # - MAIL_TO (email dove ricevere i messaggi, opzionale, default è MAIL_USER)
+

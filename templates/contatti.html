@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+  <h1>Contatti</h1>
+  <p>
+    Hai domande sulla mia tesi? Vuoi collaborare o semplicemente fare networking?
+    Compila il form qui sotto e ti risponderò il prima possibile!
+  </p>
+
+  <form method="POST" action="{{ url_for('contatti') }}">
+    <div class="form-group">
+      <label for="nome">Nome *</label>
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        required
+        placeholder="Il tuo nome"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="tua.email@esempio.com"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="messaggio">Messaggio *</label>
+      <textarea
+        id="messaggio"
+        name="messaggio"
+        required
+        placeholder="Scrivi qui il tuo messaggio..."
+      ></textarea>
+    </div>
+
+    <button type="submit">Invia messaggio</button>
+  </form>
+</div>
+
+<div class="card" style="margin-top: 32px;">
+  <h2 class="section-title">Altri modi per contattarmi</h2>
+  <p>
+    <strong>Email:</strong> <a href="mailto:a.lucchesi1999@gmail.com" style="color: var(--accent);">a.lucchesi1999@gmail.com</a><br />
+    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/andrea-lucchesi-" target="_blank" rel="noopener" style="color: var(--accent);">linkedin.com/in/andrea-lucchesi-</a><br />
+    <strong>Telefono:</strong> <a href="tel:+393455998109" style="color: var(--accent);">+39 345 599 8109</a>
+  </p>
+</div>
+{% endblock %}

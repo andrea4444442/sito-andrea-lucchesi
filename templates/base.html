@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title or "Il mio sito" }} - Landing Tesi/CV</title>
+  <meta name="description" content="Landing page per la mia tesi di laurea e portfolio personale." />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="wrap header">
+    <a class="logo" href="{{ url_for('home') }}">Il Mio Nome</a>
+    <nav class="nav">
+      <a class="{% if request.path == url_for('home') %}active{% endif %}" href="{{ url_for('home') }}">Home</a>
+      <a class="{% if request.path == url_for('chi_sono') %}active{% endif %}" href="{{ url_for('chi_sono') }}">Chi sono</a>
+      <a class="{% if request.path == url_for('contatti') %}active{% endif %}" href="{{ url_for('contatti') }}">Contatti</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        <div class="flash-stack">
+          {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="wrap footer">
+    © <span id="year"></span> Il tuo nome — Tutti i diritti riservati
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

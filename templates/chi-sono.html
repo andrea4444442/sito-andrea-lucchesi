@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+  <h1>Chi sono</h1>
+  <p>
+    Sono un laureando/laureato in [Nome del tuo corso di laurea] presso [Nome dell'università].
+    La mia passione per [campo di interesse] mi ha portato a sviluppare questo progetto di tesi,
+    concentrandomi su [argomento specifico].
+  </p>
+
+  <div class="section">
+    <h2 class="section-title">Il mio percorso</h2>
+    <p>
+      Durante gli studi ho approfondito [argomenti chiave], sviluppando competenze in
+      [tecnologie/strumenti]. Il lavoro di tesi mi ha permesso di applicare queste conoscenze
+      a un problema reale, ottenendo risultati significativi.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Competenze principali</h2>
+    <ul style="color: var(--muted); line-height: 2;">
+      <li><strong style="color: var(--txt);">Programmazione:</strong> Python, JavaScript, [altre]</li>
+      <li><strong style="color: var(--txt);">Data Science:</strong> Analisi dati, Machine Learning, Visualizzazione</li>
+      <li><strong style="color: var(--txt);">Sviluppo Web:</strong> Flask, HTML/CSS, [altre]</li>
+      <li><strong style="color: var(--txt);">Altro:</strong> [aggiungi le tue competenze]</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Obiettivi futuri</h2>
+    <p>
+      Dopo la laurea, vorrei [descrivi i tuoi obiettivi professionali o accademici].
+      Sono interessato a [settori/campo di lavoro] e sono sempre aperto a nuove opportunità
+      di collaborazione e crescita.
+    </p>
+  </div>
+
+  <div style="margin-top: 32px;">
+    <a class="btn primary" href="{{ url_for('contatti') }}">Contattami</a>
+  </div>
+</div>
+{% endblock %}
