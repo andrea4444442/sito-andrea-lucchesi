@@ -2,13 +2,13 @@
 {% block content %}
 
 <section style="margin-bottom: 40px;">
-  <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 24px; flex-wrap: wrap;">
+  <div class="hero-header">
     <img 
       src="{{ url_for('static', filename='images/foto_profilo.jpg') }}" 
       alt="Andrea Lucchesi" 
-      style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent, #5eead4);"
+      class="hero-photo"
     />
-    <div style="flex: 1; min-width: 250px;">
+    <div class="hero-text">
       <h1 style="margin-top: 0;">Andrea Lucchesi</h1>
       <p class="lead" style="margin-bottom: 0; font-size: 22px; color: var(--txt); font-weight: 600;">
         Corporate Finance Analyst

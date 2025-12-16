@@ -273,6 +273,28 @@ button[type="submit"]:hover {
   margin-top: 60px;
 }
 
+/* Hero header - foto e nome */
+.hero-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent, #5eead4);
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 250px;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .hero {
@@ -316,6 +338,24 @@ button[type="submit"]:hover {
   .nav {
     width: 100%;
     justify-content: space-between;
+  }
+
+  /* Hero centrato su mobile */
+  .hero-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    min-width: auto;
+  }
+
+  .hero-text h1 {
+    text-align: center;
+  }
+
+  .hero-text .lead {
+    text-align: center;
   }
 }
 
