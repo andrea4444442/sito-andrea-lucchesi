@@ -99,4 +99,15 @@
   </p>
 </section>
 
+<section style="margin-bottom: 40px; text-align: center;">
+  <div style="display: inline-block; padding: 20px; background: var(--card); border-radius: 18px; border: 1px solid rgba(255, 255, 255, 0.08);">
+    <img 
+      src="{{ url_for('qr_code') }}" 
+      alt="QR Code" 
+      style="width: 150px; height: 150px; border-radius: 8px; border: 2px solid var(--accent, #5eead4); display: block; margin: 0 auto;"
+    />
+    <p style="margin-top: 12px; font-size: 14px; color: var(--muted);">Scansiona per condividere il sito</p>
+  </div>
+</section>
+
 {% endblock %}
