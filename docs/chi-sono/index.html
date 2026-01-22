@@ -11,12 +11,12 @@
   <header class="wrap header">
     <nav class="nav">
       <a href="../index.html" data-i18n="nav.home">Home</a>
-      <a class="active" href="../chi-sono/" data-i18n="nav.about">Chi sono</a>
+      <a class="active" href="../chi-sono/" data-i18n="nav.about">I miei progetti</a>
       <a href="../contatti/" data-i18n="nav.contact">Contatti</a>
     </nav>
     <div class="lang-select">
       <button class="lang-toggle" type="button" aria-haspopup="true" aria-expanded="false">🇮🇹 IT</button>
-      <div class="lang-options" role="menu">
+      <div class="lang-options" role="menu" hidden>
         <button class="lang-btn" type="button" data-lang="it" role="menuitem">🇮🇹 IT</button>
         <button class="lang-btn" type="button" data-lang="en" role="menuitem">🇬🇧 EN</button>
         <button class="lang-btn" type="button" data-lang="de" role="menuitem">🇩🇪 DE</button>
@@ -27,26 +27,28 @@
 
   <main class="wrap">
     <div class="card">
-      <h1 data-i18n="about.title">Chi sono</h1>
+      <h1 data-i18n="projects.title">I miei progetti</h1>
 
-      <p class="muted" style="margin-bottom: 16px;" data-i18n="about.p1">
-        Mi sono formato in Corporate Finance con un percorso fortemente orientato all'analisi quantitativa, allo studio della performance aziendale e alla comprensione dei meccanismi economico-finanziari che guidano le decisioni strategiche delle imprese.
+      <h2 data-i18n="thesis.title">Tesi magistrale</h2>
+      <p class="muted" style="margin-bottom: 16px;">
+        <strong data-i18n="thesis.topic">Disallineamento tra politiche e pratiche ambientali: implicazioni sulla performance finanziaria e di sostenibilità delle imprese europee nel medio periodo</strong>
+      </p>
+      <p class="muted" style="margin-bottom: 20px;" data-i18n="thesis.body">
+        La tesi analizza un campione di 1.870 società quotate europee nel periodo 2004–2024, utilizzando dati Refinitiv Eikon ASSET4. Attraverso modelli panel a effetti fissi, lo studio esamina l'impatto del greenwashing e del brownwashing sulla performance finanziaria e l'evoluzione nel tempo del disallineamento tra comunicazione ambientale e pratiche operative.
       </p>
 
-      <p class="muted" style="margin-bottom: 16px;" data-i18n="about.p2">
-        Durante il mio percorso accademico ho sviluppato un approccio rigoroso e strutturato all'analisi dei dati, applicando modelli economico-finanziari ed econometrici a problemi reali, con particolare attenzione al legame tra strategie aziendali, risultati di performance e contesto normativo.
-      </p>
+      <div style="margin-bottom: 20px;">
+        <strong style="color: var(--txt); display: block; margin-bottom: 12px;" data-i18n="thesis.findings.title">Principali evidenze empiriche:</strong>
+        <ul style="color: var(--muted); line-height: 1.8; margin-left: 20px; padding-left: 0;">
+          <li data-i18n="thesis.findings.one">i comportamenti opportunistici di comunicazione ESG tendono a essere penalizzati nel breve periodo;</li>
+          <li data-i18n="thesis.findings.two">nel medio periodo emerge una tendenza al riallineamento tra pratiche e comunicazione;</li>
+          <li data-i18n="thesis.findings.three">il rafforzamento della regolamentazione europea contribuisce a ridurre gli spazi di discrezionalità comunicativa.</li>
+        </ul>
+      </div>
 
-      <p class="muted" style="margin-bottom: 16px;" data-i18n="about.p3">
-        Il lavoro di tesi rappresenta la sintesi di questo approccio: uno studio empirico su imprese europee quotate che analizza il disallineamento tra comunicazione e pratiche ambientali e le sue implicazioni economico-finanziarie nel medio periodo. Questa esperienza ha rafforzato il mio metodo di lavoro: analisi dei dati, interpretazione critica dei risultati e attenzione alla coerenza economica delle conclusioni.
-      </p>
-
-      <p class="muted" style="margin-bottom: 32px;" data-i18n="about.p4">
-        Mi contraddistingue uno stile professionale analitico, disciplinato e orientato alla sostanza, con l'obiettivo di supportare decisioni fondate su evidenze quantitative, piuttosto che su percezioni o narrative.
-      </p>
-
-      <div style="margin-top: 32px;">
-        <a class="btn primary" href="../contatti/" data-i18n="about.cta">Contattami</a>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 20px;">
+        <a class="btn" href="../static/tesi_magistrale_greenwashing.pdf" data-i18n="thesis.cta.paper">Scarica la tesi</a>
+        <a class="btn" href="../static/Presentazione%20Tesi%20Magistrale%20%E2%80%93%20AL%20copy.pptx" data-i18n="thesis.cta.slides">Scarica presentazione</a>
       </div>
     </div>
   </main>
@@ -60,55 +62,71 @@
 
     const translations = {
       it: {
-        "meta.title": "Chi sono - Landing Tesi/CV",
+        "meta.title": "I miei progetti - Landing Tesi/CV",
         "nav.home": "Home",
-        "nav.about": "Chi sono",
+        "nav.about": "I miei progetti",
         "nav.contact": "Contatti",
-        "about.title": "Chi sono",
-        "about.p1": "Mi sono formato in Corporate Finance con un percorso fortemente orientato all'analisi quantitativa, allo studio della performance aziendale e alla comprensione dei meccanismi economico-finanziari che guidano le decisioni strategiche delle imprese.",
-        "about.p2": "Durante il mio percorso accademico ho sviluppato un approccio rigoroso e strutturato all'analisi dei dati, applicando modelli economico-finanziari ed econometrici a problemi reali, con particolare attenzione al legame tra strategie aziendali, risultati di performance e contesto normativo.",
-        "about.p3": "Il lavoro di tesi rappresenta la sintesi di questo approccio: uno studio empirico su imprese europee quotate che analizza il disallineamento tra comunicazione e pratiche ambientali e le sue implicazioni economico-finanziarie nel medio periodo. Questa esperienza ha rafforzato il mio metodo di lavoro: analisi dei dati, interpretazione critica dei risultati e attenzione alla coerenza economica delle conclusioni.",
-        "about.p4": "Mi contraddistingue uno stile professionale analitico, disciplinato e orientato alla sostanza, con l'obiettivo di supportare decisioni fondate su evidenze quantitative, piuttosto che su percezioni o narrative.",
-        "about.cta": "Contattami",
+        "projects.title": "I miei progetti",
+        "thesis.title": "Tesi magistrale",
+        "thesis.topic": "Disallineamento tra politiche e pratiche ambientali: implicazioni sulla performance finanziaria e di sostenibilità delle imprese europee nel medio periodo",
+        "thesis.body": "La tesi analizza un campione di 1.870 società quotate europee nel periodo 2004–2024, utilizzando dati Refinitiv Eikon ASSET4. Attraverso modelli panel a effetti fissi, lo studio esamina l'impatto del greenwashing e del brownwashing sulla performance finanziaria e l'evoluzione nel tempo del disallineamento tra comunicazione ambientale e pratiche operative.",
+        "thesis.findings.title": "Principali evidenze empiriche:",
+        "thesis.findings.one": "i comportamenti opportunistici di comunicazione ESG tendono a essere penalizzati nel breve periodo;",
+        "thesis.findings.two": "nel medio periodo emerge una tendenza al riallineamento tra pratiche e comunicazione;",
+        "thesis.findings.three": "il rafforzamento della regolamentazione europea contribuisce a ridurre gli spazi di discrezionalità comunicativa.",
+        "thesis.cta.paper": "Scarica la tesi",
+        "thesis.cta.slides": "Scarica presentazione",
         "footer.rights": "Tutti i diritti riservati"
       },
       en: {
-        "meta.title": "About - Thesis/CV Landing",
+        "meta.title": "Projects - Thesis/CV Landing",
         "nav.home": "Home",
-        "nav.about": "About",
+        "nav.about": "Projects",
         "nav.contact": "Contact",
-        "about.title": "About me",
-        "about.p1": "I trained in Corporate Finance with a path strongly oriented toward quantitative analysis, corporate performance and understanding the financial mechanisms that drive firms' strategic decisions.",
-        "about.p2": "During my academic path I developed a rigorous and structured approach to data analysis, applying financial and econometric models to real problems, with particular attention to the link between corporate strategy, performance outcomes and regulatory context.",
-        "about.p3": "The thesis work synthesizes this approach: an empirical study on listed European companies analyzing the misalignment between communication and environmental practices and its financial implications in the medium term. This experience strengthened my method: data analysis, critical interpretation of results and attention to the economic coherence of conclusions.",
-        "about.p4": "I am characterized by an analytical, disciplined and substance-oriented professional style, with the goal of supporting decisions based on quantitative evidence rather than perceptions or narratives.",
-        "about.cta": "Contact me",
+        "projects.title": "My projects",
+        "thesis.title": "Master's thesis",
+        "thesis.topic": "Misalignment between policies and practices: implications for the financial and sustainability performance of European firms in the medium term",
+        "thesis.body": "The thesis analyzes a sample of 1,870 listed European companies in 2004–2024, using Refinitiv Eikon ASSET4 data. Through fixed-effects panel models, the study examines the impact of greenwashing and brownwashing on financial performance and the evolution over time of misalignment between environmental communication and operational practices.",
+        "thesis.findings.title": "Key empirical findings:",
+        "thesis.findings.one": "opportunistic ESG communication behaviors tend to be penalized in the short term;",
+        "thesis.findings.two": "in the medium term, a tendency to realign practices and communication emerges;",
+        "thesis.findings.three": "strengthening European regulation helps reduce the scope for discretionary communication.",
+        "thesis.cta.paper": "Download thesis",
+        "thesis.cta.slides": "Download presentation",
         "footer.rights": "All rights reserved"
       },
       de: {
-        "meta.title": "Über mich - Thesis/Lebenslauf",
+        "meta.title": "Projekte - Thesis/Lebenslauf",
         "nav.home": "Startseite",
-        "nav.about": "Über mich",
+        "nav.about": "Projekte",
         "nav.contact": "Kontakt",
-        "about.title": "Über mich",
-        "about.p1": "Ich habe mich in Corporate Finance mit einem stark quantitativen Schwerpunkt ausgebildet, mit Fokus auf Unternehmensperformance und das Verständnis der finanzwirtschaftlichen Mechanismen, die strategische Entscheidungen von Unternehmen steuern.",
-        "about.p2": "Während meines Studiums habe ich einen rigorosen und strukturierten Ansatz der Datenanalyse entwickelt und finanz-ökonomische sowie ökonometrische Modelle auf reale Probleme angewandt, mit besonderem Augenmerk auf den Zusammenhang zwischen Unternehmensstrategie, Performance-Ergebnissen und regulatorischem Kontext.",
-        "about.p3": "Die Thesisarbeit bündelt diesen Ansatz: eine empirische Studie zu börsennotierten europäischen Unternehmen, die die Diskrepanz zwischen Kommunikation und Umweltpraktiken sowie deren finanzielle Implikationen im mittleren Zeitraum analysiert. Diese Erfahrung hat meine Arbeitsweise gestärkt: Datenanalyse, kritische Interpretation der Ergebnisse und Fokus auf die ökonomische Plausibilität der Schlussfolgerungen.",
-        "about.p4": "Mich zeichnet ein analytischer, disziplinierter und substanzorientierter Arbeitsstil aus, mit dem Ziel, Entscheidungen auf quantitative Evidenz statt auf Wahrnehmungen oder Narrative zu stützen.",
-        "about.cta": "Kontakt",
+        "projects.title": "Meine Projekte",
+        "thesis.title": "Masterarbeit",
+        "thesis.topic": "Diskrepanz zwischen Politik und Praxis: Auswirkungen auf die finanzielle und nachhaltige Performance europäischer Unternehmen im mittleren Zeitraum",
+        "thesis.body": "Die Arbeit analysiert eine Stichprobe von 1.870 börsennotierten europäischen Unternehmen im Zeitraum 2004–2024 mit Refinitiv-Eikon-ASSET4-Daten. Anhand von Fixed-Effects-Panelmodellen wird der Einfluss von Greenwashing und Brownwashing auf die finanzielle Performance sowie die zeitliche Entwicklung der Diskrepanz zwischen Umweltkommunikation und operativen Praktiken untersucht.",
+        "thesis.findings.title": "Zentrale empirische Ergebnisse:",
+        "thesis.findings.one": "opportunistische ESG-Kommunikation wird kurzfristig tendenziell bestraft;",
+        "thesis.findings.two": "mittelfristig zeigt sich eine Tendenz zur Angleichung von Praxis und Kommunikation;",
+        "thesis.findings.three": "eine strengere europäische Regulierung reduziert den Spielraum für diskretionäre Kommunikation.",
+        "thesis.cta.paper": "Masterarbeit herunterladen",
+        "thesis.cta.slides": "Präsentation herunterladen",
         "footer.rights": "Alle Rechte vorbehalten"
       },
       fr: {
-        "meta.title": "À propos - Landing Thèse/CV",
+        "meta.title": "Projets - Landing Thèse/CV",
         "nav.home": "Accueil",
-        "nav.about": "À propos",
+        "nav.about": "Mes projets",
         "nav.contact": "Contacts",
-        "about.title": "À propos",
-        "about.p1": "Je me suis formé en Corporate Finance avec un parcours fortement orienté vers l'analyse quantitative, la performance d'entreprise et la compréhension des mécanismes financiers qui guident les décisions stratégiques des entreprises.",
-        "about.p2": "Au cours de mon parcours académique, j'ai développé une approche rigoureuse et structurée de l'analyse des données, en appliquant des modèles économico-financiers et économétriques à des problèmes réels, avec une attention particulière au lien entre stratégie d'entreprise, résultats de performance et contexte réglementaire.",
-        "about.p3": "Le travail de thèse synthétise cette approche : une étude empirique sur des entreprises européennes cotées qui analyse le décalage entre communication et pratiques environnementales et ses implications financières à moyen terme. Cette expérience a renforcé ma méthode : analyse des données, interprétation critique des résultats et attention à la cohérence économique des conclusions.",
-        "about.p4": "Je me distingue par un style professionnel analytique, discipliné et orienté vers le fond, avec l'objectif de soutenir des décisions fondées sur des preuves quantitatives plutôt que sur des perceptions ou des récits.",
-        "about.cta": "Contactez-moi",
+        "projects.title": "Mes projets",
+        "thesis.title": "Mémoire de master",
+        "thesis.topic": "Décalage entre politiques et pratiques : implications sur la performance financière et de durabilité des entreprises européennes à moyen terme",
+        "thesis.body": "Le mémoire analyse un échantillon de 1 870 sociétés cotées européennes sur la période 2004‑2024, à partir des données Refinitiv Eikon ASSET4. À l’aide de modèles panel à effets fixes, l’étude examine l’impact du greenwashing et du brownwashing sur la performance financière et l’évolution du décalage entre communication environnementale et pratiques opérationnelles.",
+        "thesis.findings.title": "Principaux résultats empiriques :",
+        "thesis.findings.one": "les comportements opportunistes de communication ESG sont pénalisés à court terme ;",
+        "thesis.findings.two": "à moyen terme, une tendance au réalignement entre pratiques et communication apparaît ;",
+        "thesis.findings.three": "le renforcement de la réglementation européenne réduit la marge de communication discrétionnaire.",
+        "thesis.cta.paper": "Télécharger le mémoire",
+        "thesis.cta.slides": "Télécharger la présentation",
         "footer.rights": "Tous droits réservés"
       }
     };
@@ -116,6 +134,7 @@
     const buttons = document.querySelectorAll("[data-lang]");
     const langSelect = document.querySelector(".lang-select");
     const langToggle = document.querySelector(".lang-toggle");
+    const langOptions = document.querySelector(".lang-options");
     const langLabels = {
       it: "🇮🇹 IT",
       en: "🇬🇧 EN",
@@ -149,6 +168,9 @@
         if (langSelect) {
           langSelect.classList.remove("open");
           langToggle.setAttribute("aria-expanded", "false");
+          if (langOptions) {
+            langOptions.hidden = true;
+          }
         }
       });
     });
@@ -157,11 +179,17 @@
       langToggle.addEventListener("click", () => {
         const isOpen = langSelect.classList.toggle("open");
         langToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (langOptions) {
+          langOptions.hidden = !isOpen;
+        }
       });
       document.addEventListener("click", (event) => {
         if (!langSelect.contains(event.target)) {
           langSelect.classList.remove("open");
           langToggle.setAttribute("aria-expanded", "false");
+          if (langOptions) {
+            langOptions.hidden = true;
+          }
         }
       });
     }

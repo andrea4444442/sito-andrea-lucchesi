@@ -11,12 +11,12 @@
   <header class="wrap header">
     <nav class="nav">
       <a href="../index.html" data-i18n="nav.home">Home</a>
-      <a href="../chi-sono/" data-i18n="nav.about">Chi sono</a>
+      <a href="../chi-sono/" data-i18n="nav.about">I miei progetti</a>
       <a class="active" href="../contatti/" data-i18n="nav.contact">Contatti</a>
     </nav>
     <div class="lang-select">
       <button class="lang-toggle" type="button" aria-haspopup="true" aria-expanded="false">🇮🇹 IT</button>
-      <div class="lang-options" role="menu">
+      <div class="lang-options" role="menu" hidden>
         <button class="lang-btn" type="button" data-lang="it" role="menuitem">🇮🇹 IT</button>
         <button class="lang-btn" type="button" data-lang="en" role="menuitem">🇬🇧 EN</button>
         <button class="lang-btn" type="button" data-lang="de" role="menuitem">🇩🇪 DE</button>
@@ -60,7 +60,7 @@
       it: {
         "meta.title": "Contatti - Landing Tesi/CV",
         "nav.home": "Home",
-        "nav.about": "Chi sono",
+        "nav.about": "I miei progetti",
         "nav.contact": "Contatti",
         "contact.title": "Contatti",
         "contact.p1": "Hai domande sulla mia tesi? Vuoi collaborare o semplicemente fare networking? Scrivimi via email o LinkedIn e ti risponderò il prima possibile.",
@@ -75,7 +75,7 @@
       en: {
         "meta.title": "Contact - Thesis/CV Landing",
         "nav.home": "Home",
-        "nav.about": "About",
+        "nav.about": "Projects",
         "nav.contact": "Contact",
         "contact.title": "Contact",
         "contact.p1": "Do you have questions about my thesis? Want to collaborate or simply network? Write to me by email or LinkedIn and I'll reply as soon as possible.",
@@ -90,7 +90,7 @@
       de: {
         "meta.title": "Kontakt - Thesis/Lebenslauf",
         "nav.home": "Startseite",
-        "nav.about": "Über mich",
+        "nav.about": "Projekte",
         "nav.contact": "Kontakt",
         "contact.title": "Kontakt",
         "contact.p1": "Hast du Fragen zu meiner Thesis? Möchtest du zusammenarbeiten oder einfach netzwerken? Schreib mir per E-Mail oder LinkedIn und ich antworte so bald wie möglich.",
@@ -105,7 +105,7 @@
       fr: {
         "meta.title": "Contacts - Landing Thèse/CV",
         "nav.home": "Accueil",
-        "nav.about": "À propos",
+        "nav.about": "Mes projets",
         "nav.contact": "Contacts",
         "contact.title": "Contacts",
         "contact.p1": "Vous avez des questions sur ma thèse ? Vous souhaitez collaborer ou simplement faire du networking ? Écrivez-moi par email ou LinkedIn et je vous répondrai dès que possible.",
@@ -122,6 +122,7 @@
     const buttons = document.querySelectorAll("[data-lang]");
     const langSelect = document.querySelector(".lang-select");
     const langToggle = document.querySelector(".lang-toggle");
+    const langOptions = document.querySelector(".lang-options");
     const langLabels = {
       it: "🇮🇹 IT",
       en: "🇬🇧 EN",
@@ -155,6 +156,9 @@
         if (langSelect) {
           langSelect.classList.remove("open");
           langToggle.setAttribute("aria-expanded", "false");
+          if (langOptions) {
+            langOptions.hidden = true;
+          }
         }
       });
     });
@@ -163,11 +167,17 @@
       langToggle.addEventListener("click", () => {
         const isOpen = langSelect.classList.toggle("open");
         langToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (langOptions) {
+          langOptions.hidden = !isOpen;
+        }
       });
       document.addEventListener("click", (event) => {
         if (!langSelect.contains(event.target)) {
           langSelect.classList.remove("open");
           langToggle.setAttribute("aria-expanded", "false");
+          if (langOptions) {
+            langOptions.hidden = true;
+          }
         }
       });
     }
