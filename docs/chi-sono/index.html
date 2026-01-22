@@ -3,51 +3,139 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chi sono - Landing Tesi/CV</title>
+  <title data-i18n="meta.title">Chi sono - Landing Tesi/CV</title>
   <meta name="description" content="Chi sono - profilo personale." />
   <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
   <header class="wrap header">
-    <nav class="nav">
-      <a href="../index.html">Home</a>
-      <a class="active" href="../chi-sono/">Chi sono</a>
-      <a href="../contatti/">Contatti</a>
-    </nav>
+    <div class="header-actions">
+      <nav class="nav">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a class="active" href="../chi-sono/" data-i18n="nav.about">Chi sono</a>
+        <a href="../contatti/" data-i18n="nav.contact">Contatti</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Lingua">
+        <button class="lang-btn" type="button" data-lang="it">IT</button>
+        <button class="lang-btn" type="button" data-lang="en">EN</button>
+        <button class="lang-btn" type="button" data-lang="de">DE</button>
+        <button class="lang-btn" type="button" data-lang="fr">FR</button>
+      </div>
+    </div>
   </header>
 
   <main class="wrap">
     <div class="card">
-      <h1>Chi sono</h1>
+      <h1 data-i18n="about.title">Chi sono</h1>
 
-      <p class="muted" style="margin-bottom: 16px;">
+      <p class="muted" style="margin-bottom: 16px;" data-i18n="about.p1">
         Mi sono formato in Corporate Finance con un percorso fortemente orientato all'analisi quantitativa, allo studio della performance aziendale e alla comprensione dei meccanismi economico-finanziari che guidano le decisioni strategiche delle imprese.
       </p>
 
-      <p class="muted" style="margin-bottom: 16px;">
+      <p class="muted" style="margin-bottom: 16px;" data-i18n="about.p2">
         Durante il mio percorso accademico ho sviluppato un approccio rigoroso e strutturato all'analisi dei dati, applicando modelli economico-finanziari ed econometrici a problemi reali, con particolare attenzione al legame tra strategie aziendali, risultati di performance e contesto normativo.
       </p>
 
-      <p class="muted" style="margin-bottom: 16px;">
+      <p class="muted" style="margin-bottom: 16px;" data-i18n="about.p3">
         Il lavoro di tesi rappresenta la sintesi di questo approccio: uno studio empirico su imprese europee quotate che analizza il disallineamento tra comunicazione e pratiche ambientali e le sue implicazioni economico-finanziarie nel medio periodo. Questa esperienza ha rafforzato il mio metodo di lavoro: analisi dei dati, interpretazione critica dei risultati e attenzione alla coerenza economica delle conclusioni.
       </p>
 
-      <p class="muted" style="margin-bottom: 32px;">
+      <p class="muted" style="margin-bottom: 32px;" data-i18n="about.p4">
         Mi contraddistingue uno stile professionale analitico, disciplinato e orientato alla sostanza, con l'obiettivo di supportare decisioni fondate su evidenze quantitative, piuttosto che su percezioni o narrative.
       </p>
 
       <div style="margin-top: 32px;">
-        <a class="btn primary" href="../contatti/">Contattami</a>
+        <a class="btn primary" href="../contatti/" data-i18n="about.cta">Contattami</a>
       </div>
     </div>
   </main>
 
   <footer class="wrap footer">
-    © <span id="year"></span> Andrea Lucchesi — Tutti i diritti riservati
+    © <span id="year"></span> Andrea Lucchesi — <span data-i18n="footer.rights">Tutti i diritti riservati</span>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const translations = {
+      it: {
+        "meta.title": "Chi sono - Landing Tesi/CV",
+        "nav.home": "Home",
+        "nav.about": "Chi sono",
+        "nav.contact": "Contatti",
+        "about.title": "Chi sono",
+        "about.p1": "Mi sono formato in Corporate Finance con un percorso fortemente orientato all'analisi quantitativa, allo studio della performance aziendale e alla comprensione dei meccanismi economico-finanziari che guidano le decisioni strategiche delle imprese.",
+        "about.p2": "Durante il mio percorso accademico ho sviluppato un approccio rigoroso e strutturato all'analisi dei dati, applicando modelli economico-finanziari ed econometrici a problemi reali, con particolare attenzione al legame tra strategie aziendali, risultati di performance e contesto normativo.",
+        "about.p3": "Il lavoro di tesi rappresenta la sintesi di questo approccio: uno studio empirico su imprese europee quotate che analizza il disallineamento tra comunicazione e pratiche ambientali e le sue implicazioni economico-finanziarie nel medio periodo. Questa esperienza ha rafforzato il mio metodo di lavoro: analisi dei dati, interpretazione critica dei risultati e attenzione alla coerenza economica delle conclusioni.",
+        "about.p4": "Mi contraddistingue uno stile professionale analitico, disciplinato e orientato alla sostanza, con l'obiettivo di supportare decisioni fondate su evidenze quantitative, piuttosto che su percezioni o narrative.",
+        "about.cta": "Contattami",
+        "footer.rights": "Tutti i diritti riservati"
+      },
+      en: {
+        "meta.title": "About - Thesis/CV Landing",
+        "nav.home": "Home",
+        "nav.about": "About",
+        "nav.contact": "Contact",
+        "about.title": "About me",
+        "about.p1": "I trained in Corporate Finance with a path strongly oriented toward quantitative analysis, corporate performance and understanding the financial mechanisms that drive firms' strategic decisions.",
+        "about.p2": "During my academic path I developed a rigorous and structured approach to data analysis, applying financial and econometric models to real problems, with particular attention to the link between corporate strategy, performance outcomes and regulatory context.",
+        "about.p3": "The thesis work synthesizes this approach: an empirical study on listed European companies analyzing the misalignment between communication and environmental practices and its financial implications in the medium term. This experience strengthened my method: data analysis, critical interpretation of results and attention to the economic coherence of conclusions.",
+        "about.p4": "I am characterized by an analytical, disciplined and substance-oriented professional style, with the goal of supporting decisions based on quantitative evidence rather than perceptions or narratives.",
+        "about.cta": "Contact me",
+        "footer.rights": "All rights reserved"
+      },
+      de: {
+        "meta.title": "Über mich - Thesis/Lebenslauf",
+        "nav.home": "Startseite",
+        "nav.about": "Über mich",
+        "nav.contact": "Kontakt",
+        "about.title": "Über mich",
+        "about.p1": "Ich habe mich in Corporate Finance mit einem stark quantitativen Schwerpunkt ausgebildet, mit Fokus auf Unternehmensperformance und das Verständnis der finanzwirtschaftlichen Mechanismen, die strategische Entscheidungen von Unternehmen steuern.",
+        "about.p2": "Während meines Studiums habe ich einen rigorosen und strukturierten Ansatz der Datenanalyse entwickelt und finanz-ökonomische sowie ökonometrische Modelle auf reale Probleme angewandt, mit besonderem Augenmerk auf den Zusammenhang zwischen Unternehmensstrategie, Performance-Ergebnissen und regulatorischem Kontext.",
+        "about.p3": "Die Thesisarbeit bündelt diesen Ansatz: eine empirische Studie zu börsennotierten europäischen Unternehmen, die die Diskrepanz zwischen Kommunikation und Umweltpraktiken sowie deren finanzielle Implikationen im mittleren Zeitraum analysiert. Diese Erfahrung hat meine Arbeitsweise gestärkt: Datenanalyse, kritische Interpretation der Ergebnisse und Fokus auf die ökonomische Plausibilität der Schlussfolgerungen.",
+        "about.p4": "Mich zeichnet ein analytischer, disziplinierter und substanzorientierter Arbeitsstil aus, mit dem Ziel, Entscheidungen auf quantitative Evidenz statt auf Wahrnehmungen oder Narrative zu stützen.",
+        "about.cta": "Kontakt",
+        "footer.rights": "Alle Rechte vorbehalten"
+      },
+      fr: {
+        "meta.title": "À propos - Landing Thèse/CV",
+        "nav.home": "Accueil",
+        "nav.about": "À propos",
+        "nav.contact": "Contacts",
+        "about.title": "À propos",
+        "about.p1": "Je me suis formé en Corporate Finance avec un parcours fortement orienté vers l'analyse quantitative, la performance d'entreprise et la compréhension des mécanismes financiers qui guident les décisions stratégiques des entreprises.",
+        "about.p2": "Au cours de mon parcours académique, j'ai développé une approche rigoureuse et structurée de l'analyse des données, en appliquant des modèles économico-financiers et économétriques à des problèmes réels, avec une attention particulière au lien entre stratégie d'entreprise, résultats de performance et contexte réglementaire.",
+        "about.p3": "Le travail de thèse synthétise cette approche : une étude empirique sur des entreprises européennes cotées qui analyse le décalage entre communication et pratiques environnementales et ses implications financières à moyen terme. Cette expérience a renforcé ma méthode : analyse des données, interprétation critique des résultats et attention à la cohérence économique des conclusions.",
+        "about.p4": "Je me distingue par un style professionnel analytique, discipliné et orienté vers le fond, avec l'objectif de soutenir des décisions fondées sur des preuves quantitatives plutôt que sur des perceptions ou des récits.",
+        "about.cta": "Contactez-moi",
+        "footer.rights": "Tous droits réservés"
+      }
+    };
+
+    const buttons = document.querySelectorAll("[data-lang]");
+    const storedLang = localStorage.getItem("lang");
+    const urlLang = new URLSearchParams(window.location.search).get("lang");
+    const initialLang = translations[urlLang] ? urlLang : (translations[storedLang] ? storedLang : "it");
+
+    const applyLang = (lang) => {
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      buttons.forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+      localStorage.setItem("lang", lang);
+    };
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+    });
+
+    applyLang(initialLang);
   </script>
 </body>
 </html>

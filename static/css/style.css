@@ -38,6 +38,7 @@ a {
   gap: 16px;
   padding: 20px 0;
   margin-bottom: 40px;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -50,6 +51,42 @@ a {
 .nav {
   display: flex;
   gap: 20px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.lang-btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.lang-btn.active {
+  color: var(--accent);
+  border-color: rgba(94, 234, 212, 0.5);
 }
 
 .nav a {
@@ -333,6 +370,11 @@ button[type="submit"]:hover {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .nav {

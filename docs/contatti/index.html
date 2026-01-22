@@ -3,49 +3,145 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contatti - Landing Tesi/CV</title>
+  <title data-i18n="meta.title">Contatti - Landing Tesi/CV</title>
   <meta name="description" content="Contatti - come raggiungermi." />
   <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
   <header class="wrap header">
-    <nav class="nav">
-      <a href="../index.html">Home</a>
-      <a href="../chi-sono/">Chi sono</a>
-      <a class="active" href="../contatti/">Contatti</a>
-    </nav>
+    <div class="header-actions">
+      <nav class="nav">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="../chi-sono/" data-i18n="nav.about">Chi sono</a>
+        <a class="active" href="../contatti/" data-i18n="nav.contact">Contatti</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Lingua">
+        <button class="lang-btn" type="button" data-lang="it">IT</button>
+        <button class="lang-btn" type="button" data-lang="en">EN</button>
+        <button class="lang-btn" type="button" data-lang="de">DE</button>
+        <button class="lang-btn" type="button" data-lang="fr">FR</button>
+      </div>
+    </div>
   </header>
 
   <main class="wrap">
     <div class="card">
-      <h1>Contatti</h1>
-      <p>
+      <h1 data-i18n="contact.title">Contatti</h1>
+      <p data-i18n="contact.p1">
         Hai domande sulla mia tesi? Vuoi collaborare o semplicemente fare networking?
         Scrivimi via email o LinkedIn e ti risponderò il prima possibile.
       </p>
 
       <div style="margin-top: 24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn primary" href="mailto:a.lucchesi1999@gmail.com">Invia email</a>
-        <a class="btn" href="https://www.linkedin.com/in/andrea-lucchesi-" target="_blank" rel="noopener">Scrivimi su LinkedIn</a>
+        <a class="btn primary" href="mailto:a.lucchesi1999@gmail.com" data-i18n="contact.cta.email">Invia email</a>
+        <a class="btn" href="https://www.linkedin.com/in/andrea-lucchesi-" target="_blank" rel="noopener" data-i18n="contact.cta.linkedin">Scrivimi su LinkedIn</a>
       </div>
     </div>
 
     <div class="card" style="margin-top: 32px;">
-      <h2 class="section-title">Altri modi per contattarmi</h2>
+      <h2 class="section-title" data-i18n="contact.other.title">Altri modi per contattarmi</h2>
       <p>
-        <strong>Email:</strong> <a href="mailto:a.lucchesi1999@gmail.com" style="color: var(--accent);">a.lucchesi1999@gmail.com</a><br />
-        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/andrea-lucchesi-" target="_blank" rel="noopener" style="color: var(--accent);">linkedin.com/in/andrea-lucchesi-</a><br />
-        <strong>GitHub:</strong> <a href="https://github.com/Andrea4444442" target="_blank" rel="noopener" style="color: var(--accent);">github.com/Andrea4444442</a>
+        <strong data-i18n="contact.other.email">Email:</strong> <a href="mailto:a.lucchesi1999@gmail.com" style="color: var(--accent);">a.lucchesi1999@gmail.com</a><br />
+        <strong data-i18n="contact.other.linkedin">LinkedIn:</strong> <a href="https://www.linkedin.com/in/andrea-lucchesi-" target="_blank" rel="noopener" style="color: var(--accent);">linkedin.com/in/andrea-lucchesi-</a><br />
+        <strong data-i18n="contact.other.github">GitHub:</strong> <a href="https://github.com/Andrea4444442" target="_blank" rel="noopener" style="color: var(--accent);">github.com/Andrea4444442</a>
       </p>
     </div>
   </main>
 
   <footer class="wrap footer">
-    © <span id="year"></span> Andrea Lucchesi — Tutti i diritti riservati
+    © <span id="year"></span> Andrea Lucchesi — <span data-i18n="footer.rights">Tutti i diritti riservati</span>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const translations = {
+      it: {
+        "meta.title": "Contatti - Landing Tesi/CV",
+        "nav.home": "Home",
+        "nav.about": "Chi sono",
+        "nav.contact": "Contatti",
+        "contact.title": "Contatti",
+        "contact.p1": "Hai domande sulla mia tesi? Vuoi collaborare o semplicemente fare networking? Scrivimi via email o LinkedIn e ti risponderò il prima possibile.",
+        "contact.cta.email": "Invia email",
+        "contact.cta.linkedin": "Scrivimi su LinkedIn",
+        "contact.other.title": "Altri modi per contattarmi",
+        "contact.other.email": "Email:",
+        "contact.other.linkedin": "LinkedIn:",
+        "contact.other.github": "GitHub:",
+        "footer.rights": "Tutti i diritti riservati"
+      },
+      en: {
+        "meta.title": "Contact - Thesis/CV Landing",
+        "nav.home": "Home",
+        "nav.about": "About",
+        "nav.contact": "Contact",
+        "contact.title": "Contact",
+        "contact.p1": "Do you have questions about my thesis? Want to collaborate or simply network? Write to me by email or LinkedIn and I'll reply as soon as possible.",
+        "contact.cta.email": "Send email",
+        "contact.cta.linkedin": "Message me on LinkedIn",
+        "contact.other.title": "Other ways to contact me",
+        "contact.other.email": "Email:",
+        "contact.other.linkedin": "LinkedIn:",
+        "contact.other.github": "GitHub:",
+        "footer.rights": "All rights reserved"
+      },
+      de: {
+        "meta.title": "Kontakt - Thesis/Lebenslauf",
+        "nav.home": "Startseite",
+        "nav.about": "Über mich",
+        "nav.contact": "Kontakt",
+        "contact.title": "Kontakt",
+        "contact.p1": "Hast du Fragen zu meiner Thesis? Möchtest du zusammenarbeiten oder einfach netzwerken? Schreib mir per E-Mail oder LinkedIn und ich antworte so bald wie möglich.",
+        "contact.cta.email": "E-Mail senden",
+        "contact.cta.linkedin": "Schreib mir auf LinkedIn",
+        "contact.other.title": "Weitere Kontaktmöglichkeiten",
+        "contact.other.email": "E-Mail:",
+        "contact.other.linkedin": "LinkedIn:",
+        "contact.other.github": "GitHub:",
+        "footer.rights": "Alle Rechte vorbehalten"
+      },
+      fr: {
+        "meta.title": "Contacts - Landing Thèse/CV",
+        "nav.home": "Accueil",
+        "nav.about": "À propos",
+        "nav.contact": "Contacts",
+        "contact.title": "Contacts",
+        "contact.p1": "Vous avez des questions sur ma thèse ? Vous souhaitez collaborer ou simplement faire du networking ? Écrivez-moi par email ou LinkedIn et je vous répondrai dès que possible.",
+        "contact.cta.email": "Envoyer un email",
+        "contact.cta.linkedin": "Écrivez-moi sur LinkedIn",
+        "contact.other.title": "Autres moyens de me contacter",
+        "contact.other.email": "Email :",
+        "contact.other.linkedin": "LinkedIn :",
+        "contact.other.github": "GitHub :",
+        "footer.rights": "Tous droits réservés"
+      }
+    };
+
+    const buttons = document.querySelectorAll("[data-lang]");
+    const storedLang = localStorage.getItem("lang");
+    const urlLang = new URLSearchParams(window.location.search).get("lang");
+    const initialLang = translations[urlLang] ? urlLang : (translations[storedLang] ? storedLang : "it");
+
+    const applyLang = (lang) => {
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      buttons.forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+      localStorage.setItem("lang", lang);
+    };
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+    });
+
+    applyLang(initialLang);
   </script>
 </body>
 </html>
