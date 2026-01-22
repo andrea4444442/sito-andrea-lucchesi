@@ -21,25 +21,25 @@ body {
 
 body.page-home {
   background-image: linear-gradient(rgba(11, 18, 32, 0.45), rgba(11, 18, 32, 0.55)), url("../images/home-bg-v2.png");
-  background-size: contain;
-  background-position: center top;
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
   background-attachment: fixed;
 }
 
 body.page-projects {
   background-image: linear-gradient(rgba(11, 18, 32, 0.45), rgba(11, 18, 32, 0.55)), url("../images/projects-bg.png");
-  background-size: contain;
-  background-position: center top;
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
   background-attachment: fixed;
 }
 
 body.page-contact {
   background-image: linear-gradient(rgba(11, 18, 32, 0.45), rgba(11, 18, 32, 0.55)), url("../images/contact-bg.png");
-  background-size: contain;
-  background-position: center top;
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
   background-attachment: fixed;
 }
 
