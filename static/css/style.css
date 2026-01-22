@@ -20,21 +20,21 @@ body {
 }
 
 body.page-home {
-  background-image: linear-gradient(rgba(11, 18, 32, 0.88), rgba(11, 18, 32, 0.92)), url("../images/home-bg.png");
+  background-image: linear-gradient(rgba(11, 18, 32, 0.45), rgba(11, 18, 32, 0.55)), url("../images/home-bg.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
 body.page-projects {
-  background-image: linear-gradient(rgba(11, 18, 32, 0.88), rgba(11, 18, 32, 0.92)), url("../images/projects-bg.png");
+  background-image: linear-gradient(rgba(11, 18, 32, 0.45), rgba(11, 18, 32, 0.55)), url("../images/projects-bg.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
 body.page-contact {
-  background-image: linear-gradient(rgba(11, 18, 32, 0.88), rgba(11, 18, 32, 0.92)), url("../images/contact-bg.png");
+  background-image: linear-gradient(rgba(11, 18, 32, 0.45), rgba(11, 18, 32, 0.55)), url("../images/contact-bg.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
