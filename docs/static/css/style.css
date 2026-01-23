@@ -725,10 +725,14 @@ button[type="submit"]:hover {
     align-items: center;
     justify-content: flex-start;
     gap: 12px;
+    position: relative;
   }
 
   .lang-select {
     order: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   .header-left {
@@ -739,14 +743,16 @@ button[type="submit"]:hover {
     text-align: center;
     padding-right: 0;
     width: 100%;
+    order: 2;
+    margin-top: 6px;
   }
 
   .nav {
     width: 100%;
     justify-content: center;
     text-align: center;
-    order: 2;
-    margin-top: 18px;
+    order: 0;
+    margin-top: 0;
     padding-right: 0;
     flex-wrap: wrap;
     column-gap: 10px;
@@ -754,7 +760,7 @@ button[type="submit"]:hover {
   }
 
   .lang-select {
-    width: 100%;
+    width: auto;
     justify-content: flex-end;
     padding-right: 0;
   }
@@ -764,22 +770,23 @@ button[type="submit"]:hover {
   }
 
   .hero-mini {
-    margin-left: 0;
-    margin-right: auto;
+    order: 1;
+    margin: 0 auto;
     align-items: center;
+    text-align: center;
   }
 
   .page-home .header {
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .page-home .header-left {
     align-items: center;
-    text-align: right;
+    text-align: center;
   }
 
   .page-home.intro-open .header {
-    justify-content: space-between !important;
+    justify-content: flex-start !important;
   }
 
   /* Hero centrato su mobile */
