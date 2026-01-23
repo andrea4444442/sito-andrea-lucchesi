@@ -374,6 +374,23 @@ p {
   margin-top: 24px;
 }
 
+@media (min-width: 601px) {
+  .intro-open .hero-header {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    margin: 0;
+    z-index: 6;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .intro-open .hero-text {
+    text-align: right;
+  }
+}
+
 .intro-locked main {
   min-height: 100vh;
   display: flex;
