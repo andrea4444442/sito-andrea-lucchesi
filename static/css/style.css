@@ -343,19 +343,23 @@ p {
   display: flex;
 }
 
-.intro-locked .header,
 .intro-locked .footer,
 .intro-locked .home-full,
 .intro-locked .hero-ctas {
   display: none !important;
 }
 
+.intro-locked .header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.intro-locked .nav {
+  display: none;
+}
+
 .intro-locked .lang-select {
   display: inline-flex;
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 5;
 }
 
 .intro-locked .tight-text {
