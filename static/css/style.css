@@ -362,6 +362,39 @@ p {
   display: inline-flex;
 }
 
+.hero-mini {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-mini img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+
+.hero-mini-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--txt);
+}
+
+.hero-mini-role {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.intro-open .hero-mini {
+  display: flex;
+}
+
+.intro-open .hero-header {
+  display: none;
+}
+
 .intro-locked .tight-text {
   display: none;
 }
