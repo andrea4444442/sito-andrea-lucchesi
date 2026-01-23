@@ -344,6 +344,10 @@ p {
   display: none;
 }
 
+.intro-locked .tight-text {
+  display: none;
+}
+
 .accent-orange {
   color: #f59e0b;
 }
