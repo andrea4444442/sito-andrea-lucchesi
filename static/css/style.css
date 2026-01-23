@@ -386,21 +386,21 @@ p {
 }
 
 .hero-mini img {
-  width: 36px;
-  height: 36px;
+    width: 42px;
+    height: 42px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--accent);
 }
 
 .hero-mini-name {
-  font-size: 14px;
+    font-size: 15px;
   font-weight: 700;
   color: var(--txt);
 }
 
 .hero-mini-role {
-  font-size: 12px;
+    font-size: 13px;
   color: var(--muted);
 }
 
@@ -711,7 +711,7 @@ button[type="submit"]:hover {
   }
 
   .nav a {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
