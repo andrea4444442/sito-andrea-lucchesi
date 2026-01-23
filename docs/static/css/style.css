@@ -437,7 +437,14 @@ button[type="submit"]:hover {
 }
 
 .hero-centered {
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+
+.hero-centered .hero-text {
+  flex: 0;
+  min-width: 0;
 }
 
 .thesis-topic {
