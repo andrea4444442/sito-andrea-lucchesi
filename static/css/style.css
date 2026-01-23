@@ -64,6 +64,12 @@ a {
   margin-bottom: 40px;
 }
 
+.header.wrap {
+  max-width: none;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
 .logo {
   font-weight: 800;
   letter-spacing: 0.3px;
@@ -195,6 +201,37 @@ p {
   box-shadow: 0 10px 30px rgba(5, 10, 20, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px) saturate(120%);
   -webkit-backdrop-filter: blur(10px) saturate(120%);
+}
+
+.accordion {
+  cursor: pointer;
+}
+
+.accordion summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion summary::after {
+  content: "+";
+  color: var(--muted);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.accordion[open] summary::after {
+  content: "–";
+}
+
+.accordion > *:not(summary) {
+  margin-top: 16px;
 }
 
 .grid {
