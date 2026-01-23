@@ -259,6 +259,10 @@ p {
   margin-right: auto;
 }
 
+.btns-right {
+  justify-content: flex-end;
+}
+
 .accordion-right summary {
   justify-content: flex-end;
 }
