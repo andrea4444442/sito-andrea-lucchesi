@@ -825,14 +825,15 @@ button[type="submit"]:hover {
   }
 
   .page-home .accordion summary {
-    min-height: 96px;
+    height: 110px;
     align-items: center;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .page-home .accordion summary strong {
     display: block;
+    line-height: 1.2;
   }
 
   .page-projects .accordion summary h2 {
