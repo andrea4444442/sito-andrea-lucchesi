@@ -411,24 +411,24 @@ p {
   display: none !important;
 }
 
-.header-swap .header {
+.header-swap:not(.page-home) .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.header-swap .hero-mini {
+.header-swap:not(.page-home) .hero-mini {
   margin-right: 0;
 }
 
-.header-swap .header-left {
+.header-swap:not(.page-home) .header-left {
   margin-left: auto;
   text-align: right;
   align-items: center;
 }
 
-.header-swap .nav,
-.header-swap .lang-select {
+.header-swap:not(.page-home) .nav,
+.header-swap:not(.page-home) .lang-select {
   justify-content: flex-end;
 }
 
