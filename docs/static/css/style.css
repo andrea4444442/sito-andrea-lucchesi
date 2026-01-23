@@ -13,7 +13,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   background: var(--bg);
   color: var(--txt);
   line-height: 1.6;
@@ -246,6 +246,10 @@ p {
 
 .skills-body {
   white-space: pre-line;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .accordion-right summary {
