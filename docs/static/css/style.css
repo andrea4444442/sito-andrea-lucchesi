@@ -432,6 +432,23 @@ p {
   justify-content: flex-end;
 }
 
+.page-home.intro-open .header {
+  justify-content: flex-start !important;
+}
+
+.page-home.intro-open .hero-mini {
+  order: 0;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.page-home.intro-open .header-left {
+  order: 1;
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+}
+
 
 .intro-locked .tight-text {
   display: none;
