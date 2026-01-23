@@ -236,8 +236,20 @@ p {
   content: "–";
 }
 
+.accordion summary h2 {
+  margin: 0;
+}
+
 .accordion > *:not(summary) {
   margin-top: 16px;
+}
+
+.accordion-right summary {
+  justify-content: flex-end;
+}
+
+.accordion-right[open] summary {
+  justify-content: center;
 }
 
 .grid {
