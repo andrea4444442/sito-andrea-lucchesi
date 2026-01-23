@@ -396,6 +396,14 @@ p {
   display: none;
 }
 
+.intro-open .header {
+  justify-content: flex-start;
+}
+
+.intro-open .nav {
+  margin-right: auto;
+}
+
 .intro-locked .tight-text {
   display: none;
 }
