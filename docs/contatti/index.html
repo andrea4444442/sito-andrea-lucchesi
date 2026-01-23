@@ -30,13 +30,34 @@
       <h1 data-i18n="contact.title">Contatti</h1>
       <p data-i18n="contact.p1">
         Hai domande sulla mia tesi? Vuoi collaborare o semplicemente fare networking?
-        Scrivimi via email o LinkedIn e ti risponderò il prima possibile.
+        Compila il form qui sotto e ti risponderò il prima possibile.
       </p>
 
-      <div style="margin-top: 24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn primary" href="mailto:a.lucchesi1999@gmail.com" data-i18n="contact.cta.email">Invia email</a>
-        <a class="btn" href="https://www.linkedin.com/in/andrea-lucchesi-" target="_blank" rel="noopener" data-i18n="contact.cta.linkedin">Scrivimi su LinkedIn</a>
-      </div>
+      <form class="card" method="POST" action="https://formspree.io/f/yourFormId">
+        <input type="hidden" name="_subject" value="Nuovo messaggio dal sito" />
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <div class="form-group">
+          <label for="nome" data-i18n="contact.form.name.label">Nome *</label>
+          <input type="text" id="nome" name="nome" required data-i18n-placeholder="contact.form.name.placeholder" placeholder="Il tuo nome" />
+        </div>
+
+        <div class="form-group">
+          <label for="email" data-i18n="contact.form.email.label">Email *</label>
+          <input type="email" id="email" name="email" required data-i18n-placeholder="contact.form.email.placeholder" placeholder="tua.email@esempio.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="messaggio" data-i18n="contact.form.message.label">Messaggio *</label>
+          <textarea id="messaggio" name="messaggio" required data-i18n-placeholder="contact.form.message.placeholder" placeholder="Scrivi qui il tuo messaggio..."></textarea>
+        </div>
+
+        <button type="submit" data-i18n="contact.form.submit">Invia messaggio</button>
+      </form>
+
+      <p style="margin-top: 16px; font-size: 14px; color: var(--muted);" data-i18n="contact.form.note">
+        Nota: per attivare il form sostituisci "yourFormId" con l'ID Formspree.
+      </p>
     </div>
 
     <div class="card" style="margin-top: 32px;">
@@ -63,9 +84,15 @@
         "nav.about": "I miei progetti",
         "nav.contact": "Contatti",
         "contact.title": "Contatti",
-        "contact.p1": "Hai domande sulla mia tesi? Vuoi collaborare o semplicemente fare networking? Scrivimi via email o LinkedIn e ti risponderò il prima possibile.",
-        "contact.cta.email": "Invia email",
-        "contact.cta.linkedin": "Scrivimi su LinkedIn",
+        "contact.p1": "Hai domande sulla mia tesi? Vuoi collaborare o semplicemente fare networking? Compila il form qui sotto e ti risponderò il prima possibile.",
+        "contact.form.name.label": "Nome *",
+        "contact.form.name.placeholder": "Il tuo nome",
+        "contact.form.email.label": "Email *",
+        "contact.form.email.placeholder": "tua.email@esempio.com",
+        "contact.form.message.label": "Messaggio *",
+        "contact.form.message.placeholder": "Scrivi qui il tuo messaggio...",
+        "contact.form.submit": "Invia messaggio",
+        "contact.form.note": "Nota: per attivare il form sostituisci \"yourFormId\" con l'ID Formspree.",
         "contact.other.title": "Altri modi per contattarmi",
         "contact.other.email": "Email:",
         "contact.other.linkedin": "LinkedIn:",
@@ -78,9 +105,15 @@
         "nav.about": "Projects",
         "nav.contact": "Contact",
         "contact.title": "Contact",
-        "contact.p1": "Do you have questions about my thesis? Want to collaborate or simply network? Write to me by email or LinkedIn and I'll reply as soon as possible.",
-        "contact.cta.email": "Send email",
-        "contact.cta.linkedin": "Message me on LinkedIn",
+        "contact.p1": "Do you have questions about my thesis? Want to collaborate or simply network? Fill out the form below and I'll reply as soon as possible.",
+        "contact.form.name.label": "Name *",
+        "contact.form.name.placeholder": "Your name",
+        "contact.form.email.label": "Email *",
+        "contact.form.email.placeholder": "you@example.com",
+        "contact.form.message.label": "Message *",
+        "contact.form.message.placeholder": "Write your message here...",
+        "contact.form.submit": "Send message",
+        "contact.form.note": "Note: replace \"yourFormId\" with your Formspree ID to activate the form.",
         "contact.other.title": "Other ways to contact me",
         "contact.other.email": "Email:",
         "contact.other.linkedin": "LinkedIn:",
@@ -93,9 +126,15 @@
         "nav.about": "Projekte",
         "nav.contact": "Kontakt",
         "contact.title": "Kontakt",
-        "contact.p1": "Hast du Fragen zu meiner Thesis? Möchtest du zusammenarbeiten oder einfach netzwerken? Schreib mir per E-Mail oder LinkedIn und ich antworte so bald wie möglich.",
-        "contact.cta.email": "E-Mail senden",
-        "contact.cta.linkedin": "Schreib mir auf LinkedIn",
+        "contact.p1": "Hast du Fragen zu meiner Thesis? Möchtest du zusammenarbeiten oder einfach netzwerken? Fülle das Formular aus und ich antworte so bald wie möglich.",
+        "contact.form.name.label": "Name *",
+        "contact.form.name.placeholder": "Dein Name",
+        "contact.form.email.label": "E-Mail *",
+        "contact.form.email.placeholder": "dein.name@beispiel.de",
+        "contact.form.message.label": "Nachricht *",
+        "contact.form.message.placeholder": "Schreib deine Nachricht hier...",
+        "contact.form.submit": "Nachricht senden",
+        "contact.form.note": "Hinweis: Ersetze \"yourFormId\" durch deine Formspree-ID, um das Formular zu aktivieren.",
         "contact.other.title": "Weitere Kontaktmöglichkeiten",
         "contact.other.email": "E-Mail:",
         "contact.other.linkedin": "LinkedIn:",
@@ -108,9 +147,15 @@
         "nav.about": "Mes projets",
         "nav.contact": "Contacts",
         "contact.title": "Contacts",
-        "contact.p1": "Vous avez des questions sur ma thèse ? Vous souhaitez collaborer ou simplement faire du networking ? Écrivez-moi par email ou LinkedIn et je vous répondrai dès que possible.",
-        "contact.cta.email": "Envoyer un email",
-        "contact.cta.linkedin": "Écrivez-moi sur LinkedIn",
+        "contact.p1": "Vous avez des questions sur ma thèse ? Vous souhaitez collaborer ou simplement faire du networking ? Remplissez le formulaire ci-dessous et je vous répondrai dès que possible.",
+        "contact.form.name.label": "Nom *",
+        "contact.form.name.placeholder": "Votre nom",
+        "contact.form.email.label": "Email *",
+        "contact.form.email.placeholder": "vous@exemple.com",
+        "contact.form.message.label": "Message *",
+        "contact.form.message.placeholder": "Écrivez votre message ici...",
+        "contact.form.submit": "Envoyer le message",
+        "contact.form.note": "Note : remplacez \"yourFormId\" par votre ID Formspree pour activer le formulaire.",
         "contact.other.title": "Autres moyens de me contacter",
         "contact.other.email": "Email :",
         "contact.other.linkedin": "LinkedIn :",
