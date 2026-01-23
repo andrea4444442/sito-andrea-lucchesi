@@ -334,6 +334,11 @@ p {
   justify-content: center;
 }
 
+.intro-cta .btn {
+  font-size: 14px;
+  padding: 12px 24px;
+}
+
 .intro-locked .intro-cta {
   display: flex;
 }
