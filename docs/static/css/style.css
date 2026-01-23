@@ -824,6 +824,11 @@ button[type="submit"]:hover {
     text-align: center;
   }
 
+  .page-projects .accordion summary h2 {
+    text-align: left;
+    width: 100%;
+  }
+
   .hero-text {
     min-width: auto;
     text-align: center;
