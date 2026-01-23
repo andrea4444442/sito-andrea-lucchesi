@@ -380,10 +380,9 @@ p {
   }
 
   .intro-open .hero-header {
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    top: 20px;
     right: 24px;
-    transform: translateY(-50%);
     margin: 0;
     z-index: 6;
     flex-direction: row;
