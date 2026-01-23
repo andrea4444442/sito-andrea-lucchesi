@@ -772,6 +772,10 @@ button[type="submit"]:hover {
     text-align: right;
   }
 
+  .page-home.intro-open .header {
+    justify-content: space-between !important;
+  }
+
   /* Hero centrato su mobile */
   .hero-centered {
     display: flex;
