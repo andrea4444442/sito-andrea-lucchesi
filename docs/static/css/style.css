@@ -738,18 +738,21 @@ button[type="submit"]:hover {
     gap: 10px;
     text-align: center;
     padding-right: 0;
+    width: 100%;
   }
 
   .nav {
-    width: auto;
+    width: 100%;
     justify-content: center;
     text-align: center;
     order: 1;
     margin-top: 48px;
-    padding-right: 14px;
+    padding-right: 0;
   }
 
   .lang-select {
+    width: 100%;
+    justify-content: center;
     padding-right: 0;
   }
 
