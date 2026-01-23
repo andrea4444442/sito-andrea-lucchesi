@@ -437,14 +437,25 @@ button[type="submit"]:hover {
 }
 
 .hero-centered {
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
+}
+
+.hero-centered .hero-photo {
+  justify-self: end;
 }
 
 .hero-centered .hero-text {
-  flex: 0;
   min-width: 0;
+  text-align: center;
+}
+
+.hero-centered::after {
+  content: "";
+  width: 150px;
+  height: 150px;
 }
 
 .thesis-topic {
