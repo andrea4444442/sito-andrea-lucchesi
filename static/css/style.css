@@ -768,7 +768,7 @@ button[type="submit"]:hover {
   }
 
   .page-home .header-left {
-    align-items: flex-end;
+    align-items: center;
     text-align: right;
   }
 
