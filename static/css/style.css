@@ -269,6 +269,14 @@ p {
   justify-content: flex-end;
 }
 
+.tight-text p {
+  margin-bottom: 8px;
+}
+
+.tight-text p:last-child {
+  margin-bottom: 0;
+}
+
 .accordion-right summary {
   justify-content: flex-end;
 }
