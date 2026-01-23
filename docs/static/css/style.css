@@ -824,19 +824,19 @@ button[type="submit"]:hover {
     text-align: center;
   }
 
-  .page-home .accordion {
+  .page-home .skills-card {
     height: 140px;
     overflow: hidden;
   }
 
-  .page-home .accordion summary {
+  .page-home .skills-card summary {
     height: 100%;
     align-items: center;
     padding: 0 20px;
     overflow: hidden;
   }
 
-  .page-home .accordion[open] {
+  .page-home .skills-card[open] {
     height: auto;
   }
 
