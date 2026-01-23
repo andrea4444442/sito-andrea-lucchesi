@@ -277,7 +277,8 @@ p {
 
 .tight-text p {
   text-align: center !important;
-  margin: 0 !important;
+  margin: 0 auto !important;
+  max-width: 860px;
 }
 
 .accordion-right summary {
