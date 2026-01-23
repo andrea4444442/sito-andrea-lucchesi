@@ -345,6 +345,14 @@ p {
   display: none !important;
 }
 
+.intro-locked .lang-select {
+  display: inline-flex;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 5;
+}
+
 .intro-locked .tight-text {
   display: none;
 }
