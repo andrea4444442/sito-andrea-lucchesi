@@ -403,11 +403,19 @@ p {
 }
 
 .intro-open .header {
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+
+.intro-open .header-left {
+  margin-right: auto;
 }
 
 .intro-open .nav {
   margin-right: 0;
+}
+
+.intro-open .hero-mini {
+  margin-left: 0;
 }
 
 .intro-locked .tight-text {
