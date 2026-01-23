@@ -825,26 +825,18 @@ button[type="submit"]:hover {
   }
 
   .page-home .skills-card {
-    height: 140px;
-    min-height: 140px;
-    max-height: 140px;
-    box-sizing: border-box;
     overflow: hidden;
   }
 
   .page-home .skills-card summary {
-    height: 140px;
-    min-height: 140px;
-    max-height: 140px;
-    box-sizing: border-box;
+    min-height: 120px;
     align-items: center;
     padding: 0 20px;
-    overflow: hidden;
   }
 
-  .page-home .skills-card[open] {
-    height: auto;
-    max-height: none;
+  .page-home .skills-card summary strong {
+    font-size: 18px;
+    line-height: 1.3;
   }
 
   .page-home .accordion summary strong {
