@@ -380,14 +380,16 @@ p {
   }
 
   .intro-open .hero-header {
-    position: fixed;
-    top: 20px;
+    position: absolute;
+    top: 0;
     right: 24px;
     margin: 0;
     z-index: 6;
     flex-direction: row;
     gap: 12px;
     text-align: right;
+    height: 100%;
+    align-items: center;
   }
 
   .intro-open .hero-text {
