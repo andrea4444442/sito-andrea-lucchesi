@@ -825,9 +825,10 @@ button[type="submit"]:hover {
   }
 
   .page-home .accordion summary {
-    height: 110px;
+    height: 130px;
     align-items: center;
     padding: 0 20px;
+    overflow: hidden;
   }
 
   .page-home .accordion summary strong {
