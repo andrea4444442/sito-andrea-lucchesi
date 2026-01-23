@@ -798,6 +798,12 @@ button[type="submit"]:hover {
     margin-bottom: 24px;
   }
 
+  .page-home .card {
+    max-width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .btns-right {
     justify-content: center;
   }
