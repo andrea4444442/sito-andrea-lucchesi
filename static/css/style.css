@@ -275,6 +275,10 @@ p {
   margin-top: 24px;
 }
 
+.accent-orange {
+  color: #f59e0b;
+}
+
 .tight-text {
   text-align: center;
 }
