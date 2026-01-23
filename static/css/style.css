@@ -372,7 +372,6 @@ p {
   display: none;
   align-items: center;
   gap: 10px;
-  margin-left: auto;
 }
 
 .hero-mini img {
@@ -396,7 +395,6 @@ p {
 
 .intro-open .hero-mini {
   display: flex !important;
-  margin-left: auto;
 }
 
 .intro-open .hero-header {
@@ -404,18 +402,22 @@ p {
 }
 
 .intro-open .header {
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: space-between !important;
+  align-items: center !important;
 }
 
 .intro-open .header-left {
-  margin-right: auto;
+  margin-right: auto !important;
   flex: 0 0 auto;
-  align-items: flex-start;
+  align-items: center !important;
 }
 
 .intro-open .nav {
   margin-right: 0;
+}
+
+.intro-open .lang-select {
+  margin-right: auto;
 }
 
 
