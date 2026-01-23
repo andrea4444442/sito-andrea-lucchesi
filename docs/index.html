@@ -402,16 +402,26 @@
       });
     }
 
-    applyLang(initialLang);
+    const applyIntroState = (unlocked) => {
+      if (unlocked) {
+        document.body.classList.remove("intro-locked");
+        document.body.classList.add("intro-open");
+        document.body.classList.add("header-swap");
+      }
+    };
+
+    const introUnlocked = localStorage.getItem("introUnlocked") === "1";
+    applyIntroState(introUnlocked);
 
     const introButton = document.getElementById("intro-cta-btn");
     if (introButton) {
       introButton.addEventListener("click", () => {
-        document.body.classList.remove("intro-locked");
-        document.body.classList.add("intro-open");
-        document.body.classList.add("header-swap");
+        localStorage.setItem("introUnlocked", "1");
+        applyIntroState(true);
       });
     }
+
+    applyLang(initialLang);
   </script>
 </body>
 </html>
