@@ -824,7 +824,7 @@ button[type="submit"]:hover {
     text-align: center;
   }
 
-  .page-home .accordion summary {
+  .accordion summary {
     height: 130px;
     align-items: center;
     padding: 0 20px;
