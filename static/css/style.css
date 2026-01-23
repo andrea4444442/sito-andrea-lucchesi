@@ -279,6 +279,11 @@ p {
   color: #f59e0b;
 }
 
+.form-card {
+  max-width: 720px;
+  margin: 24px auto 0;
+}
+
 .tight-text {
   text-align: center;
 }
