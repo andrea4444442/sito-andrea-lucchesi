@@ -794,6 +794,11 @@ button[type="submit"]:hover {
     height: 56px;
   }
 
+  .page-home .hero-mini img {
+    width: 56px;
+    height: 56px;
+  }
+
   .header-swap:not(.page-home) .header-left {
     align-items: center;
     text-align: center;
