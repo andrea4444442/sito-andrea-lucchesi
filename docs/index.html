@@ -447,6 +447,14 @@
         const isOpen = dropdown.classList.toggle("open");
         cvToggle.setAttribute("aria-expanded", String(isOpen));
       });
+      cvMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          const dropdown = cvToggle.closest(".cv-dropdown");
+          if (!dropdown) return;
+          dropdown.classList.remove("open");
+          cvToggle.setAttribute("aria-expanded", "false");
+        });
+      });
       document.addEventListener("click", () => {
         const dropdown = cvToggle.closest(".cv-dropdown");
         if (!dropdown) return;

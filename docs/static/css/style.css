@@ -284,8 +284,7 @@ p {
   z-index: 10;
 }
 
-.cv-dropdown.open .cv-menu,
-.cv-dropdown:focus-within .cv-menu {
+.cv-dropdown.open .cv-menu {
   display: flex;
 }
 
