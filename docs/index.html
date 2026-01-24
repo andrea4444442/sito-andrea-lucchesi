@@ -77,7 +77,13 @@
         </div>
         <div class="btns-right hero-ctas" style="display:flex; gap:12px; flex-wrap:wrap;">
           <a class="btn primary" href="contatti/" data-i18n="hero.cta.contact">Contattami</a>
-          <a class="btn" href="static/CV_Andrea_Lucchesi.pdf" data-i18n="hero.cta.cv">Scarica CV</a>
+          <div class="cv-dropdown">
+            <button class="btn" id="cv-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="hero.cta.cv">Scarica CV</button>
+            <div class="cv-menu" id="cv-menu">
+              <a href="static/CV_Andrea_Lucchesi.pdf" data-i18n="hero.cta.cv.en">CV (EN)</a>
+              <a href="static/CV_Andrea_Lucchesi_IT.pdf" data-i18n="hero.cta.cv.it">CV (IT)</a>
+            </div>
+          </div>
         </div>
         <div class="intro-cta">
           <button class="btn primary" id="intro-cta-btn" data-i18n="intro.cta">Clicca qui</button>
@@ -179,6 +185,8 @@
         "hero.p5": "Non rappresenta ciò che sono “già diventato”, ma la direzione in cui sto andando.",
         "hero.cta.contact": "Contattami",
         "hero.cta.cv": "Scarica CV",
+        "hero.cta.cv.en": "CV (EN)",
+        "hero.cta.cv.it": "CV (IT)",
         "intro.cta": "Clicca qui",
         "skills.title": "Competenze",
         "skills.financial.title": "Corporate Finance e Valutazione",
@@ -222,6 +230,8 @@
         "hero.p5": "It does not represent what I have already become, but the direction I am heading in.",
         "hero.cta.contact": "Contact me",
         "hero.cta.cv": "Download CV",
+        "hero.cta.cv.en": "CV (EN)",
+        "hero.cta.cv.it": "CV (IT)",
         "skills.title": "Skills",
         "skills.financial.title": "Corporate Finance & Valuation",
         "skills.financial.body": "• Financial statement analysis (classification, economic-financial reading, key indicators)\n• Business planning & project finance (translating a project into economic and financial flows, sustainability and feasibility)\n• Company valuation (fundamental methods: DCF and multiples)\n• Performance & value drivers (ROIC, cost of capital, cash generation)\n• Basic understanding of capital structure & IPO process (equity vs debt, financial leverage, listing logic and stages)",
@@ -265,6 +275,8 @@
         "hero.p5": "Sie zeigt nicht, was ich bereits geworden bin, sondern die Richtung, in die ich gehe.",
         "hero.cta.contact": "Kontakt",
         "hero.cta.cv": "Lebenslauf herunterladen",
+        "hero.cta.cv.en": "CV (EN)",
+        "hero.cta.cv.it": "CV (IT)",
         "skills.title": "Kompetenzen",
         "skills.financial.title": "Corporate Finance & Bewertung",
         "skills.financial.body": "• Analyse von Abschlüssen (Klassifizierung, wirtschaftlich-finanzielle Lektüre, zentrale Kennzahlen)\n• Business Planning & Project Finance (Übersetzung eines Projekts in wirtschaftliche und finanzielle Flüsse, Nachhaltigkeit und Machbarkeit)\n• Unternehmensbewertung (grundlegende Methoden: DCF und Multiples)\n• Performance & Value Drivers (ROIC, Kapitalkosten, Cash-Generierung)\n• Grundverständnis von Kapitalstruktur & IPO-Prozess (Eigen- vs. Fremdkapital, Leverage, Logik und Phasen der Börsennotierung)",
@@ -308,6 +320,8 @@
         "hero.p5": "Il ne représente pas ce que je suis déjà devenu, mais la direction vers laquelle je vais.",
         "hero.cta.contact": "Contactez-moi",
         "hero.cta.cv": "Télécharger le CV",
+        "hero.cta.cv.en": "CV (EN)",
+        "hero.cta.cv.it": "CV (IT)",
         "skills.title": "Compétences",
         "skills.financial.title": "Corporate Finance & Valorisation",
         "skills.financial.body": "• Analyse des états financiers (classification, lecture économique‑financière, principaux indicateurs)\n• Business planning & project finance (traduction d’un projet en flux économiques et financiers, soutenabilité et faisabilité)\n• Valorisation d’entreprise (méthodes fondamentales : DCF et multiples)\n• Performance & value drivers (ROIC, coût du capital, génération de cash)\n• Compréhension de base de la structure du capital & du processus d’IPO (equity vs debt, levier financier, logique et étapes de la cotation)",
@@ -422,6 +436,26 @@
     }
 
     applyLang(initialLang);
+
+    const cvToggle = document.getElementById("cv-toggle");
+    const cvMenu = document.getElementById("cv-menu");
+    if (cvToggle && cvMenu) {
+      cvToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const dropdown = cvToggle.closest(".cv-dropdown");
+        if (!dropdown) return;
+        const isOpen = dropdown.classList.toggle("open");
+        cvToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      document.addEventListener("click", () => {
+        const dropdown = cvToggle.closest(".cv-dropdown");
+        if (!dropdown) return;
+        if (dropdown.classList.contains("open")) {
+          dropdown.classList.remove("open");
+          cvToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
   </script>
 </body>
 </html>
