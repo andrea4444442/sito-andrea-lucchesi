@@ -849,21 +849,21 @@ p {
 
   .skills-labels {
     width: 100%;
-    padding: 0 6px;
+    padding: 0 12px;
     box-sizing: border-box;
     overflow: hidden;
-    margin-top: 4px;
+    margin-top: 12px;
   }
 
   .skills-label {
     max-width: 100%;
     text-align: center;
-    font-size: 9px;
-    padding: 2px 6px;
+    font-size: 12px;
+    padding: 6px 10px;
   }
 
   .skills-chart canvas {
-    height: 180px !important;
+    height: 200px !important;
     width: 100% !important;
   }
 
