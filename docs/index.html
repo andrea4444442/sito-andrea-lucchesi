@@ -107,9 +107,9 @@
     </section>
 
     <section style="margin-bottom: 40px;">
-      <h2 data-i18n="skills.title">Competenze</h2>
+      <h2 data-i18n="skills.my_skills">My Skills</h2>
       <div class="skills-chart">
-        <canvas id="skillsChart" width="500" height="500" aria-label="Skills chart"></canvas>
+        <canvas id="cs" width="500" height="500" aria-label="Skills chart"></canvas>
       </div>
     </section>
 
@@ -160,6 +160,7 @@
         "hero.cta.cv.it": "CV (IT)",
         "intro.cta": "Clicca qui",
         "skills.title": "Competenze",
+        "skills.my_skills": "Le mie competenze",
         "skills.financial.title": "Corporate Finance e Valutazione",
         "skills.financial.body": "• Analisi di bilancio (bilancio come strumento decisionale: riclassificazione, lettura economico-finanziaria, principali indicatori)\n• Business planning & project finance (traduzione di un progetto in flussi economici e finanziari, sostenibilità e fattibilità)\n• Valutazione d’impresa (metodi fondamentali: DCF e multipli)\n• Performance & value drivers (ROIC, costo del capitale, generazione di cassa)\n• Comprensione base di struttura del capitale e processo IPO (equity vs debt, leva finanziaria, logiche e fasi della quotazione)",
         "skills.valuation.title": "Analisi Quantitativa e Dati",
@@ -204,6 +205,7 @@
         "hero.cta.cv.en": "CV (EN)",
         "hero.cta.cv.it": "CV (IT)",
         "skills.title": "Skills",
+        "skills.my_skills": "My Skills",
         "skills.financial.title": "Corporate Finance & Valuation",
         "skills.financial.body": "• Financial statement analysis (classification, economic-financial reading, key indicators)\n• Business planning & project finance (translating a project into economic and financial flows, sustainability and feasibility)\n• Company valuation (fundamental methods: DCF and multiples)\n• Performance & value drivers (ROIC, cost of capital, cash generation)\n• Basic understanding of capital structure & IPO process (equity vs debt, financial leverage, listing logic and stages)",
         "skills.valuation.title": "Quantitative & Data Analysis",
@@ -249,6 +251,7 @@
         "hero.cta.cv.en": "CV (EN)",
         "hero.cta.cv.it": "CV (IT)",
         "skills.title": "Kompetenzen",
+        "skills.my_skills": "Meine Skills",
         "skills.financial.title": "Corporate Finance & Bewertung",
         "skills.financial.body": "• Analyse von Abschlüssen (Klassifizierung, wirtschaftlich-finanzielle Lektüre, zentrale Kennzahlen)\n• Business Planning & Project Finance (Übersetzung eines Projekts in wirtschaftliche und finanzielle Flüsse, Nachhaltigkeit und Machbarkeit)\n• Unternehmensbewertung (grundlegende Methoden: DCF und Multiples)\n• Performance & Value Drivers (ROIC, Kapitalkosten, Cash-Generierung)\n• Grundverständnis von Kapitalstruktur & IPO-Prozess (Eigen- vs. Fremdkapital, Leverage, Logik und Phasen der Börsennotierung)",
         "skills.valuation.title": "Quantitative Analyse & Daten",
@@ -294,6 +297,7 @@
         "hero.cta.cv.en": "CV (EN)",
         "hero.cta.cv.it": "CV (IT)",
         "skills.title": "Compétences",
+        "skills.my_skills": "Mes compétences",
         "skills.financial.title": "Corporate Finance & Valorisation",
         "skills.financial.body": "• Analyse des états financiers (classification, lecture économique‑financière, principaux indicateurs)\n• Business planning & project finance (traduction d’un projet en flux économiques et financiers, soutenabilité et faisabilité)\n• Valorisation d’entreprise (méthodes fondamentales : DCF et multiples)\n• Performance & value drivers (ROIC, coût du capital, génération de cash)\n• Compréhension de base de la structure du capital & du processus d’IPO (equity vs debt, levier financier, logique et étapes de la cotation)",
         "skills.valuation.title": "Analyse Quantitative & Données",
@@ -341,51 +345,55 @@
     const skillsChartData = {
       it: {
         labels: [
-          "Valutazione & Financial Modeling",
-          "ESG & Finanza sostenibile",
-          "R",
+          "Computational models",
+          "Git",
+          "MATLAB",
           "Python",
-          "Excel",
-          "Data Visualization & Presentazioni"
+          "Software development",
+          "Web development",
+          "Data analysis"
         ],
-        values: [90, 90, 80, 50, 80, 80]
+        values: [75, 100, 100, 75, 75, 50, 100]
       },
       en: {
         labels: [
-          "Valuation & Financial Modeling",
-          "ESG & Sustainability Finance",
-          "R",
+          "Computational models",
+          "Git",
+          "MATLAB",
           "Python",
-          "Excel",
-          "Data Visualization & Presentations"
+          "Software development",
+          "Web development",
+          "Data analysis"
         ],
-        values: [90, 90, 80, 50, 80, 80]
+        values: [75, 100, 100, 75, 75, 50, 100]
       },
       de: {
         labels: [
-          "Bewertung & Financial Modeling",
-          "ESG & Nachhaltigkeitsfinanzierung",
-          "R",
+          "Computational models",
+          "Git",
+          "MATLAB",
           "Python",
-          "Excel",
-          "Datenvisualisierung & Präsentationen"
+          "Software development",
+          "Web development",
+          "Data analysis"
         ],
-        values: [90, 90, 80, 50, 80, 80]
+        values: [75, 100, 100, 75, 75, 50, 100]
       },
       fr: {
         labels: [
-          "Valorisation & Modélisation financière",
-          "ESG & Finance durable",
-          "R",
+          "Computational models",
+          "Git",
+          "MATLAB",
           "Python",
-          "Excel",
-          "Visualisation de données & Présentations"
+          "Software development",
+          "Web development",
+          "Data analysis"
         ],
-        values: [90, 90, 80, 50, 80, 80]
+        values: [75, 100, 100, 75, 75, 50, 100]
       }
     };
 
-    const skillsChartCtx = document.getElementById("skillsChart");
+    const skillsChartCtx = document.getElementById("cs");
     const skillsChart = skillsChartCtx
       ? new Chart(skillsChartCtx, {
           type: "radar",
@@ -393,7 +401,7 @@
             labels: skillsChartData[initialLang]?.labels || skillsChartData.it.labels,
             datasets: [
               {
-                label: "Skills",
+                label: "Ability",
                 data: skillsChartData[initialLang]?.values || skillsChartData.it.values,
                 backgroundColor: "rgba(179,181,198,0.2)",
                 borderColor: "#3385FF",
