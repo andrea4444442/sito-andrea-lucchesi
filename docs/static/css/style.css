@@ -609,6 +609,8 @@ p {
 
 .profile-more {
   margin-top: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-more summary {
@@ -619,6 +621,7 @@ p {
   color: var(--accent);
   font-weight: 600;
   list-style: none;
+  order: 2;
 }
 
 .profile-more summary::-webkit-details-marker {
@@ -632,6 +635,10 @@ p {
 
 .profile-more[open] summary::after {
   content: "–";
+}
+
+.profile-more p {
+  order: 1;
 }
 
 .skills-section .container {
