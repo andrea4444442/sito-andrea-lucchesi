@@ -6,6 +6,7 @@
   <title data-i18n="meta.title">Home - Landing Tesi/CV</title>
   <meta name="description" content="Landing page per la mia tesi di laurea e portfolio personale." />
   <link rel="stylesheet" href="static/css/style.css?v=20260123-4">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body class="page-home intro-locked">
   <div class="mobile-hero-bg" aria-hidden="true">
@@ -107,38 +108,8 @@
 
     <section style="margin-bottom: 40px;">
       <h2 data-i18n="skills.title">Competenze</h2>
-      <div class="grid">
-        <details class="card accordion skills-card">
-          <summary><strong data-i18n="skills.financial.title">Corporate Finance e Valutazione</strong></summary>
-          <p class="muted skills-body" data-i18n="skills.financial.body">• Analisi di bilancio (bilancio come strumento decisionale: riclassificazione, lettura economico-finanziaria, principali indicatori)
-• Business planning &amp; project finance (traduzione di un progetto in flussi economici e finanziari, sostenibilità e fattibilità)
-• Valutazione d’impresa (metodi fondamentali: DCF e multipli)
-• Performance &amp; value drivers (ROIC, costo del capitale, generazione di cassa)
-• Comprensione base di struttura del capitale e processo IPO (equity vs debt, leva finanziaria, logiche e fasi della quotazione)</p>
-        </details>
-        <details class="card accordion skills-card">
-          <summary><strong data-i18n="skills.valuation.title">Analisi Quantitativa e Dati</strong></summary>
-          <p class="muted skills-body" data-i18n="skills.valuation.body">• Analisi econometrica (regressioni, panel data, test di ipotesi)
-• Modellazione statistica e interpretazione
-• Pulizia, normalizzazione e trasformazione dei dati
-• Dataset finanziari ed ESG su larga scala (Refinitiv Eikon / Aida)
-• Ricerca empirica sulle performance aziendali</p>
-        </details>
-        <details class="card accordion skills-card">
-          <summary><strong data-i18n="skills.quant.title">Programmazione e Strumenti</strong></summary>
-          <p class="muted skills-body" data-i18n="skills.quant.body">• Python (analisi dati, financial modelling, automazione)
-• R / RStudio (econometria, ricerca accademica)
-• MATLAB (analisi numerica)
-• Excel avanzato (modelli finanziari, scenari, sensitivity analysis)</p>
-        </details>
-        <details class="card accordion skills-card">
-          <summary><strong data-i18n="skills.esg.title">Ricerca, Strategia e Comunicazione</strong></summary>
-          <p class="muted skills-body" data-i18n="skills.esg.body">• Ricerca accademica e review della letteratura
-• Scrittura analitica (livello tesi)
-• Sintesi di informazioni finanziarie complesse
-• Presentazione dei risultati finanziari
-• Inglese professionale (contesto accademico e business)</p>
-        </details>
+      <div class="skills-chart">
+        <canvas id="skillsChart" width="500" height="500" aria-label="Skills chart"></canvas>
       </div>
     </section>
 
@@ -367,6 +338,103 @@
     const urlLang = new URLSearchParams(window.location.search).get("lang");
     const initialLang = translations[urlLang] ? urlLang : (translations[storedLang] ? storedLang : "it");
 
+    const skillsChartData = {
+      it: {
+        labels: [
+          "Valutazione & Financial Modeling",
+          "ESG & Finanza sostenibile",
+          "R",
+          "Python",
+          "Excel",
+          "Data Visualization & Presentazioni"
+        ],
+        values: [90, 90, 80, 50, 80, 80]
+      },
+      en: {
+        labels: [
+          "Valuation & Financial Modeling",
+          "ESG & Sustainability Finance",
+          "R",
+          "Python",
+          "Excel",
+          "Data Visualization & Presentations"
+        ],
+        values: [90, 90, 80, 50, 80, 80]
+      },
+      de: {
+        labels: [
+          "Bewertung & Financial Modeling",
+          "ESG & Nachhaltigkeitsfinanzierung",
+          "R",
+          "Python",
+          "Excel",
+          "Datenvisualisierung & Präsentationen"
+        ],
+        values: [90, 90, 80, 50, 80, 80]
+      },
+      fr: {
+        labels: [
+          "Valorisation & Modélisation financière",
+          "ESG & Finance durable",
+          "R",
+          "Python",
+          "Excel",
+          "Visualisation de données & Présentations"
+        ],
+        values: [90, 90, 80, 50, 80, 80]
+      }
+    };
+
+    const skillsChartCtx = document.getElementById("skillsChart");
+    const skillsChart = skillsChartCtx
+      ? new Chart(skillsChartCtx, {
+          type: "radar",
+          data: {
+            labels: skillsChartData[initialLang]?.labels || skillsChartData.it.labels,
+            datasets: [
+              {
+                label: "Skills",
+                data: skillsChartData[initialLang]?.values || skillsChartData.it.values,
+                backgroundColor: "rgba(179,181,198,0.2)",
+                borderColor: "#3385FF",
+                pointBackgroundColor: "#3385FF",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#3385FF",
+                pointHoverBorderColor: "#3385FF"
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              r: {
+                beginAtZero: true,
+                min: 0,
+                max: 100,
+                ticks: {
+                  stepSize: 20
+                },
+                pointLabels: {
+                  font: {
+                    size: 14
+                  }
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              }
+            }
+          }
+        })
+      : null;
+
+    if (skillsChartCtx) {
+      skillsChartCtx.parentElement.style.height = "420px";
+    }
+
     const applyLang = (lang) => {
       document.documentElement.lang = lang;
       document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -382,6 +450,13 @@
         langToggle.textContent = langLabels[lang] || lang;
       }
       localStorage.setItem("lang", lang);
+
+      if (skillsChart) {
+        const chartData = skillsChartData[lang] || skillsChartData.it;
+        skillsChart.data.labels = chartData.labels;
+        skillsChart.data.datasets[0].data = chartData.values;
+        skillsChart.update();
+      }
     };
 
     buttons.forEach((btn) => {
