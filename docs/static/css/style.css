@@ -603,6 +603,10 @@ p {
   -webkit-backdrop-filter: blur(10px) saturate(120%);
 }
 
+.skills-chart canvas {
+  color: #ffffff;
+}
+
 .skills-section .container {
   max-width: 860px;
   margin: 0 auto;
