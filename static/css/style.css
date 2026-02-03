@@ -736,6 +736,18 @@ p {
   display: none;
 }
 
+.is-mobile .mobile-only {
+  display: block !important;
+}
+
+.is-mobile .desktop-only {
+  display: none !important;
+}
+
+.readmore-content[hidden] {
+  display: none !important;
+}
+
 @media (max-width: 600px) {
   .mobile-only {
     display: block;
