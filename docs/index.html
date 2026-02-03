@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="meta.title">Home - Landing Tesi/CV</title>
   <meta name="description" content="Landing page per la mia tesi di laurea e portfolio personale." />
-  <link rel="stylesheet" href="static/css/style.css?v=20260123-16">
+  <link rel="stylesheet" href="static/css/style.css?v=20260123-17">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body class="page-home intro-locked">
@@ -85,7 +85,7 @@
             </p>
           </details>
           <span class="readmore-anchor mobile-only" id="readmore-anchor-profile" aria-hidden="true"></span>
-          <button class="readmore-toggle mobile-only" type="button" data-readmore="profile" data-i18n="hero.more">Leggi di più</button>
+          <button class="readmore-toggle mobile-only" type="button" data-readmore="profile" data-state="closed" data-i18n="hero.more">Leggi di più</button>
           <div class="readmore-content mobile-only" data-readmore-content="profile" hidden>
             <p class="muted" style="max-width: 860px; margin-bottom: 16px;" data-i18n="hero.p2">
               Mi sono formato con un percorso fortemente orientato all’analisi quantitativa, allo studio della performance aziendale e alla comprensione delle dinamiche economico-finanziarie che guidano le decisioni d’impresa. Durante gli studi ho lavorato su modelli finanziari, analisi dei dati e progetti di business planning, sviluppando un approccio rigoroso, strutturato e data-driven.
@@ -131,7 +131,7 @@
         Nel lungo periodo, aspiro a sviluppare una visione completa dell’impresa e delle sue dinamiche, con l’ambizione di arrivare a ricoprire ruoli di responsabilità nella gestione finanziaria e strategica di un’azienda.
       </p>
       <span class="readmore-anchor mobile-only" id="readmore-anchor-goal" aria-hidden="true"></span>
-      <button class="readmore-toggle mobile-only" type="button" data-readmore="goal" data-i18n="hero.more">Leggi di più</button>
+      <button class="readmore-toggle mobile-only" type="button" data-readmore="goal" data-state="closed" data-i18n="hero.more">Leggi di più</button>
       <div class="readmore-content mobile-only" data-readmore-content="goal" hidden>
         <p class="muted" style="margin-bottom: 16px;" data-i18n="goal.p2">
           Nel breve periodo cerco opportunità Junior in ambito Corporate Finance e Financial Analysis, in contesti strutturati e ad alto standard professionale, dove poter apprendere sul campo e contribuire con un approccio analitico, rigoroso e data-driven.
@@ -220,6 +220,7 @@
         "hero.cta.cv.en": "CV (EN)",
         "hero.cta.cv.it": "CV (IT)",
         "hero.more": "Leggi di più",
+      "hero.more.close": "Leggi di meno",
         "intro.cta": "Clicca qui",
         "skills.title": "Competenze",
         "skills.my_skills": "Le mie competenze",
@@ -267,6 +268,7 @@
         "hero.cta.cv.en": "CV (EN)",
         "hero.cta.cv.it": "CV (IT)",
         "hero.more": "Read more",
+      "hero.more.close": "Read less",
         "skills.title": "Skills",
         "skills.my_skills": "My Skills",
         "skills.financial.title": "Corporate Finance & Valuation",
@@ -314,6 +316,7 @@
         "hero.cta.cv.en": "CV (EN)",
         "hero.cta.cv.it": "CV (IT)",
         "hero.more": "Mehr lesen",
+      "hero.more.close": "Weniger lesen",
         "skills.title": "Kompetenzen",
         "skills.my_skills": "Meine Skills",
         "skills.financial.title": "Corporate Finance & Bewertung",
@@ -361,6 +364,7 @@
         "hero.cta.cv.en": "CV (EN)",
         "hero.cta.cv.it": "CV (IT)",
         "hero.more": "Lire la suite",
+      "hero.more.close": "Lire moins",
         "skills.title": "Compétences",
         "skills.my_skills": "Mes compétences",
         "skills.financial.title": "Corporate Finance & Valorisation",
@@ -582,6 +586,13 @@
         renderMobileLabels(chartData.labels);
         updateSkillsCardHeight();
       }
+
+      document.querySelectorAll(".readmore-toggle[data-readmore]").forEach((btn) => {
+        const isOpen = btn.dataset.state === "open";
+        btn.textContent = isOpen
+          ? (translations[lang]?.["hero.more.close"] || "Leggi di meno")
+          : (translations[lang]?.["hero.more"] || "Leggi di più");
+      });
     };
 
     buttons.forEach((btn) => {
@@ -656,6 +667,8 @@
         if (!isOpen) {
           content.hidden = false;
           endMarker.insertAdjacentElement("afterend", toggle);
+          toggle.dataset.state = "open";
+          toggle.textContent = translations[localStorage.getItem("lang")]?.["hero.more.close"] || "Leggi di meno";
           const jump = () => scrollToTarget(endMarker);
           jump();
           setTimeout(jump, 150);
@@ -666,6 +679,8 @@
           if (anchor) {
             anchor.insertAdjacentElement("afterend", toggle);
           }
+          toggle.dataset.state = "closed";
+          toggle.textContent = translations[localStorage.getItem("lang")]?.["hero.more"] || "Leggi di più";
         }
       });
     };

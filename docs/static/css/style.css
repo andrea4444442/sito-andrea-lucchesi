@@ -395,6 +395,10 @@ p {
   font-weight: 700;
 }
 
+.readmore-toggle[data-state="open"]::after {
+  content: "–";
+}
+
 
 .readmore-content {
   margin-top: 10px;
