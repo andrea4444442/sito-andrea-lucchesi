@@ -118,6 +118,7 @@
           <div class="col-12 skills-canvas-wrap">
             <div class="card skills-chart-card">
               <canvas id="cs" width="500" height="500" aria-label="Skills chart"></canvas>
+              <div class="skills-labels" id="skills-labels" aria-label="Skills labels"></div>
             </div>
           </div>
         </div>
@@ -413,11 +414,37 @@
     };
 
     const skillsChartCtx = document.getElementById("cs");
+    const skillsLabels = document.getElementById("skills-labels");
+    const isMobile = window.matchMedia("(max-width: 600px)");
+    const shortLabel = (label) => label.split(" ")[0];
+
+    const renderMobileLabels = (labels) => {
+      if (!skillsLabels) return;
+      if (!isMobile.matches) {
+        skillsLabels.innerHTML = "";
+        return;
+      }
+      skillsLabels.innerHTML = "";
+      labels.forEach((label) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "skills-label";
+        btn.dataset.full = label;
+        btn.textContent = shortLabel(label);
+        btn.addEventListener("click", () => {
+          const isFull = btn.textContent === btn.dataset.full;
+          btn.textContent = isFull ? shortLabel(label) : btn.dataset.full;
+        });
+        skillsLabels.appendChild(btn);
+      });
+    };
     const skillsChart = skillsChartCtx
       ? new Chart(skillsChartCtx, {
           type: "radar",
           data: {
-            labels: skillsChartData[initialLang]?.labels || skillsChartData.it.labels,
+            labels: (isMobile.matches
+              ? (skillsChartData[initialLang]?.labels || skillsChartData.it.labels).map(shortLabel)
+              : (skillsChartData[initialLang]?.labels || skillsChartData.it.labels)),
             datasets: [
               {
                 label: "Ability",
@@ -469,6 +496,8 @@
 
     if (skillsChartCtx) {
       skillsChartCtx.parentElement.style.height = "420px";
+      const initialLabels = skillsChartData[initialLang]?.labels || skillsChartData.it.labels;
+      renderMobileLabels(initialLabels);
     }
 
     const applyLang = (lang) => {
@@ -489,9 +518,10 @@
 
       if (skillsChart) {
         const chartData = skillsChartData[lang] || skillsChartData.it;
-        skillsChart.data.labels = chartData.labels;
+        skillsChart.data.labels = isMobile.matches ? chartData.labels.map(shortLabel) : chartData.labels;
         skillsChart.data.datasets[0].data = chartData.values;
         skillsChart.update();
+        renderMobileLabels(chartData.labels);
       }
     };
 
