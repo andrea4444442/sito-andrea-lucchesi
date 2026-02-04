@@ -834,7 +834,8 @@ p {
 
   .skills-chart-card {
     padding: 12px;
-    height: 400px;
+    height: 300px !important;
+    min-height: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -862,7 +863,7 @@ p {
   }
 
   .skills-chart canvas {
-    height: 260px !important;
+    height: 200px !important;
     width: 100% !important;
   }
 
