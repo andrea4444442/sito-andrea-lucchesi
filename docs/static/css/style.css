@@ -843,10 +843,6 @@ p {
     justify-content: flex-start;
   }
 
-  .skills-chart-card canvas {
-    height: 260px !important;
-    width: 100% !important;
-  }
 
   .skills-chart {
     min-height: 0;
@@ -868,7 +864,7 @@ p {
   }
 
   .skills-chart canvas {
-    height: 200px !important;
+    height: 320px !important;
     width: 100% !important;
   }
 

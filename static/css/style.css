@@ -862,10 +862,6 @@ p {
     padding: 6px 10px;
   }
 
-  .skills-chart canvas {
-    height: 200px !important;
-    width: 100% !important;
-  }
 
   .skills-chart-card,
   .skills-chart {
