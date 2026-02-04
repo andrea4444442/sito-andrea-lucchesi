@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title data-i18n="meta.title">Home - Landing Tesi/CV</title>
   <meta name="description" content="Landing page per la mia tesi di laurea e portfolio personale." />
-  <link rel="stylesheet" href="static/css/style.css?v=20260123-31">
+  <link rel="stylesheet" href="static/css/style.css?v=20260123-32">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body class="page-home intro-locked">
@@ -697,6 +697,9 @@
           const anchor = document.getElementById(`readmore-anchor-${key}`);
           if (anchor) {
             anchor.insertAdjacentElement("afterend", toggle);
+            if (key === "profile") {
+              scrollToTarget(anchor);
+            }
           }
           toggle.dataset.state = "closed";
           toggle.textContent = translations[localStorage.getItem("lang")]?.["hero.more"] || "Leggi di più";
